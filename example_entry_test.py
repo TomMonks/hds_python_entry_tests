@@ -53,13 +53,13 @@ print(sum(x))
 # ### Question 2           
 # **[3 marks]**
 # 
-# Present value (PV) is a financial calculation to find the current value of a future sum of money or cash stream in today at a specific rate of return.
+# Present value (PV) is a financial calculation to find the current value of a future sum of money or cash stream in today's money at a specific rate of return.
 # 
 # **Write a function to calculate the present value of a future value.**
 # 
 # The **present value** of a future value is calculated as follows:
 # 
-# $$PV = \dfrac{FV}{1 + r}^n $$
+# $$PV = \dfrac{FV}{(1 + r)^n} $$
 # 
 # Where **r** is rate of return and **FV** is the future value.
 # 
