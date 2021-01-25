@@ -26,7 +26,7 @@
 # ---
 # 
 # 
-# There are 7 questions worth a total of 30 marks.
+# There are 7 questions worth a total of 30 marks.  The pass mark for the test is 15 marks.
 # 
 # You are allowed to use any text editor or IDE. You are not allowed to use any other software, search the internet for answers or look at any othe reference material including a book.
 # 
@@ -138,7 +138,7 @@ print(f'{result:.2f}')
 # ### QUESTION 3: 
 # **[5 marks]**
 # 
-# **Write a function called `fizzbuzz` that accepts a integer parameter `n`.  The function should check if `n` is multiple of 3, 5 or both. The function should return a string as specified below**  
+# **Write a function called `fizzbuzz` that accepts an integer parameter `n`.  The function should check if `n` is multiple of 3, 5 or both. The function should return a string as specified below**  
 # 
 # * If the number is a multiple of 3 return "FIZZ"
 # * Else If the number is a multiple of 5 return "BUZZ"
@@ -195,36 +195,68 @@ print(fizzbuzz(23))
 
 # ### QUESTION 4
 # 
-# [4 MARKS]
+# **[4 MARKS]**
 # 
-# Using your `fizzbuzz` function, code a python programme that **loops** over the array provided below and repeatedly calls `fizzbuzz` and prints the result. 
+# The function `convert_celsius_to_fahrenheit()` provided below accepts a float parameter `deg_celsius` that represents a temperature in degrees celsius.  Using the standard formula it calculates and returns a float representing the corresponding temperature in degrees fahrenheit.
+# 
+# The list below represents a range of temperatures in degrees celsius that a researcher needs to convert into degrees fahrenheit. 
 # 
 # ```python
-# test_data = [1, 3, 5, 15, 23]
+# celsius = [39.2, 36.5, 37.3, 41.0]
 # ```
 # 
-# **EXAMPLE ANSWER 1**
+# Code a python programme that **creates a new list called `degrees_f`.**  The code must **loop** over the `celsius` list and repeatedly call `convert_celsius_to_fahrenheit` passing in the current list item in the iteration. Print the new list `degrees_f` (temperature in degrees fahrenheit) to the screen.
+# 
+# **FUNCTIONS PROVIDED**
 
 # In[6]:
 
 
-#solution using a for loop
-test_data = [1, 3, 5, 15, 23]
+def convert_celsius_to_fahrenheit(deg_celsius):
+    """
+    Convert degress celsius to fahrenheit
+    Returns float value - temp in fahrenheit
+    
+    Parameters:
+    -----------
+    deg_celcius: float
+        temp in degrees celsius
+        
+    Returns:
+    -------
+    float
+    """
+    return (9/5) * deg_celsius + 32
 
-for n in test_data:
-    result = fizzbuzz(n)
-    print(result)
-
-
-# **EXAMPLE ANSWER 2**
 
 # In[7]:
 
 
+#list of temps in degree celsius to convert to fahrenheit
+celsius = [39.2, 36.5, 37.3, 41.0]
+
+
+# **EXAMPLE ANSWER 1**
+
+# In[8]:
+
+
+#solution using a for loop
+degrees_f = []
+for degrees_c in celsius:
+    result = convert_celsius_to_fahrenheit(degrees_c)
+    degrees_f.append(result)
+print(degrees_f)
+
+
+# **EXAMPLE ANSWER 2**
+
+# In[9]:
+
+
 #solution using a list comprehension
-test_data = [1, 3, 5, 15, 23]
-results = [fizzbuzz(n) for n in test_data]
-print(results)
+degrees_f = [convert_celsius_to_fahrenheit(degrees_c) for degrees_c in celsius]
+print(degrees_f)
 
 
 # ### QUESTION 5
@@ -244,7 +276,7 @@ print(results)
 # **Expected Output**
 # * 1000
 
-# In[8]:
+# In[10]:
 
 
 import math
@@ -272,7 +304,7 @@ def find_max(to_search):
     return current_max
 
 
-# In[9]:
+# In[11]:
 
 
 #test case
@@ -299,7 +331,7 @@ print(f'Max value is {result}')
 # 
 # **EXAMPLE SOLUTION 1:**
 
-# In[10]:
+# In[12]:
 
 
 #Solution using a nested iteration
@@ -315,7 +347,7 @@ print(flat_list)
 
 # **EXAMPLE SOLUTION 2:**
 
-# In[11]:
+# In[13]:
 
 
 #solution using a list comprehension
@@ -327,7 +359,7 @@ print(flat_list)
 
 # **EXAMPLE SOLUTION 3:**
 
-# In[16]:
+# In[14]:
 
 
 #solution using itertools
@@ -360,7 +392,7 @@ print(flat_list)
 # 
 # **EXAMPLE SOLUTION**
 
-# In[13]:
+# In[15]:
 
 
 comics = ['Iron-man', 'Captain America', 'Spider-man', 'Thor', 'Deadpool']
